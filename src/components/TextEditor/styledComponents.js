@@ -6,8 +6,12 @@ export const EditorContainer = styled.div`
   border: 1px solid #cbd5e1;
   background-color: #25262c;
   border-radius: 10px;
-  height: 80vh;
-  width: 30vw;
+  width: 250px;
+  height: 250px;
+  @media screen and (min-width: 768px) {
+    height: 80vh;
+    min-width: 500px;
+  }
 `
 export const IconContainer = styled.ul`
   display: flex;
@@ -39,7 +43,7 @@ export const TextField = styled.textarea`
   font-size: 22px;
   color: #f8fafc;
   margin-left: 20px;
-  font-weight"${props => props.isBold}
-  font-style:${props => props.isItalic}
-  text-decoration:${props => props.isUnderline}
+  font-weight: ${props => (props.activeBold ? 'bold' : 'normal')};
+  font-style: ${props => (props.activeItalic ? 'italic' : 'normal')};
+  text-decoration: ${props => (props.activeUnderLine ? 'underline' : 'normal')};
 `
